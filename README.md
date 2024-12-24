@@ -1,3 +1,15 @@
+# mkxp-z-nobihaza
+
+**mkxp-z-nobihaza** is a working "fork" (although not really) of mkxp-z to (attempt to) improve compatibility with Nobihaza games.
+
+Due to me absolutely not familiar with Ruby, C++, SDL and everything related to mkxp-z's build system, so it will take a very long time for this project to be completed. However, I'm currently aiming for these "almost unachievable" goals:
+
+- [ ] Integrate Ruby 1.x instead of 3.x to bring back RGSS userscript compatibility in newest `mkxp-z` (Almost all RGSS Nobihaza games are script-heavy so compatibility is important).
+- [ ] Fix the critical bug preventing any games with non-ASCII (or at least, Japanese) images to be playable on macOS.
+- [ ] Implement iOS (or at least libretro support) for `mkxp-z`.
+
+This small project was started as my hobby project for my hobby community; therefore it's currently in my lowest priority and I only work on this in my very free time. It can even take years for me to research (for a noob not knowing anything about the buildsystem and dependencies), but it's because of this project that can let me know more about many things that I haven't known before establishing this project.
+
 # mkxp-z
 
 <p align="center"><b>
