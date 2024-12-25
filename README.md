@@ -28,11 +28,36 @@ This will be updated frequently whenever I find a new error when building.
 
 * It's recommended to have both Xcode 12 and Xcode 10 installed. Xcode 10 will be used to build Ruby with the old toolchains, and Xcode 12 will be used to build the rest.
 
+* Currently, I'm only able to build the `x86_64` (Intel) version. `arm64` (Apple Silicon) version isn't able to build yet (or maybe impossible).
+
 ### Linux-specific
 
 I only have Arch Linux installed, but if you find any equivalent ways for your distro please apply them.
 
-*Not tested yet so no instructions are available*
+* Nothing special about the requirements for Linux aside from older `bison`. Just keep your current distro as-is and proceed building as usual.
+
+* I only tested the `x86-64` architecture. Other architectures aren't tested.
+
+## Buildscripts
+
+I just created some buildscripts to simplify the building process. I'll make sure it will work at least in my build environment.
+
+### Windows
+
+*not implemented*
+
+### macOS
+
+*not implemented*
+
+### Linux
+
+```sh
+cd buildscripts/linux
+./start.sh
+```
+
+When you want to rebuild the toolchain or encountered an error when building, you need to run `cleanup.sh` from the same `buildscripts/linux` folder.
 
 ## Status
 
