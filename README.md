@@ -10,6 +10,30 @@ Due to me absolutely not familiar with Ruby, C++, SDL and everything related to 
 
 This small project was started as my hobby project for my hobby community; therefore it's currently in my lowest priority and I only work on this in my very free time. It can even take years for me to research (for a noob not knowing anything about the buildsystem and dependencies), but it's because of this project that can let me know more about many things that I haven't known before establishing this project.
 
+## Requirements
+
+Due to this project's special nature, the buildsystem requirements are also different than usual.
+
+This will be updated frequently whenever I find a new error when building.
+
+### General
+
+* `bison` 2.x (higher version will cause the `yydestruct` error when building)
+
+### Windows-specific
+
+*Not tested yet so no instructions are available*
+
+### macOS specific
+
+* It's recommended to have both Xcode 12 and Xcode 10 installed. Xcode 10 will be used to build Ruby with the old toolchain, and Xcode 12 will be used to build the rest.
+
+### Linux-specific
+
+I only have Arch Linux installed, but if you find any equivalent ways for your distro please apply them.
+
+*Not tested yet so no instructions are available*
+
 # mkxp-z
 
 <p align="center"><b>
