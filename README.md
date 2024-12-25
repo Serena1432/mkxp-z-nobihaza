@@ -34,6 +34,25 @@ I only have Arch Linux installed, but if you find any equivalent ways for your d
 
 *Not tested yet so no instructions are available*
 
+### Status
+
+This is the status to check if the building process is successful (at least in my build environment) or not:
+
+## Windows
+
+- [ ] Toolchain/Dependencies
+- [ ] `mkxp-z` player
+
+## macOS
+
+- [ ] Toolchain/Dependencies
+- [ ] `mkxp-z` player
+
+## Linux
+
+- [ ] Toolchain/Dependencies
+- [ ] `mkxp-z` player
+
 # mkxp-z
 
 <p align="center"><b>
