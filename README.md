@@ -67,16 +67,19 @@ This is the status to check if the building process is successful (at least in m
 
 - [ ] Toolchain/Dependencies
 - [ ] `mkxp-z` player
+- [ ] Playable
 
 ### macOS
 
 - [ ] Toolchain/Dependencies
 - [ ] `mkxp-z` player
+- [ ] Playable
 
 ### Linux
 
 - [X] Toolchain/Dependencies
 - [X] `mkxp-z` player
+- [ ] Playable
 
 # mkxp-z
 
