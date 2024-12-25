@@ -26,7 +26,7 @@ This will be updated frequently whenever I find a new error when building.
 
 ### macOS specific
 
-* It's recommended to have both Xcode 12 and Xcode 10 installed. Xcode 10 will be used to build Ruby with the old toolchain, and Xcode 12 will be used to build the rest.
+* It's recommended to have both Xcode 12 and Xcode 10 installed. Xcode 10 will be used to build Ruby with the old toolchains, and Xcode 12 will be used to build the rest.
 
 ### Linux-specific
 
@@ -50,8 +50,8 @@ This is the status to check if the building process is successful (at least in m
 
 ### Linux
 
-- [ ] Toolchain/Dependencies
-- [ ] `mkxp-z` player
+- [X] Toolchain/Dependencies
+- [X] `mkxp-z` player
 
 # mkxp-z
 

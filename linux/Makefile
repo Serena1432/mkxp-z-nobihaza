@@ -329,8 +329,8 @@ $(LIBDIR)/libruby.so.1.9: $(DOWNLOADS)/ruby/Makefile
 $(DOWNLOADS)/ruby/Makefile: $(DOWNLOADS)/ruby/configure
 	cd $(DOWNLOADS)/ruby; \
 	export $(CONFIGURE_ENV); \
-	export CFLAGS="-flto $$CFLAGS"; \
-	export LDFLAGS="-flto $$LDFLAGS"; \
+	export CFLAGS="$$CFLAGS"; \
+	export LDFLAGS="$$LDFLAGS"; \
 	./configure $(CONFIGURE_ARGS) $(RUBY_CONFIGURE_ARGS) $(RUBY_FLAGS)
 
 $(DOWNLOADS)/ruby/configure: $(DOWNLOADS)/ruby/configure.ac

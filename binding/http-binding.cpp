@@ -70,7 +70,6 @@ VALUE formResponse(mkxp_net::HTTPResponse &res) {
     return ret;
 }
 
-#if RAPI_MAJOR >= 2
 void* httpGetInternal(void *req) {
     VALUE ret;
     
@@ -79,7 +78,6 @@ void* httpGetInternal(void *req) {
     
     return (void*)ret;
 }
-#endif
 
 RB_METHOD_GUARD(httpGet) {
     RB_UNUSED_PARAM;
@@ -103,14 +101,13 @@ RB_METHOD_GUARD(httpGet) {
 }
 RB_METHOD_GUARD_END
 
-#if RAPI_MAJOR >= 2
 
 typedef struct {
     mkxp_net::HTTPRequest *req;
     mkxp_net::StringMap *postData;
 } httpPostInternalArgs;
 
-void* httpPostInternal(void *args) {
+VALUE httpPostInternal(httpPostInternalArgs *args) {
     VALUE ret;
     
     mkxp_net::HTTPRequest *req = ((httpPostInternalArgs*)args)->req;
@@ -119,9 +116,8 @@ void* httpPostInternal(void *args) {
     mkxp_net::HTTPResponse res = req->post(*postData);
     ret = formResponse(res);
     
-    return (void*)ret;
+    return ret;
 }
-#endif
 
 RB_METHOD_GUARD(httpPost) {
     RB_UNUSED_PARAM;
@@ -148,14 +144,13 @@ RB_METHOD_GUARD(httpPost) {
 }
 RB_METHOD_GUARD_END
 
-#if RAPI_MAJOR >= 2
 typedef struct {
     mkxp_net::HTTPRequest *req;
     const char *body;
     const char *ctype;
 } httpPostBodyInternalArgs;
 
-void* httpPostBodyInternal(void *args) {
+VALUE httpPostBodyInternal(httpPostBodyInternalArgs *args) {
     VALUE ret;
     
     mkxp_net::HTTPRequest *req = ((httpPostBodyInternalArgs*)args)->req;
@@ -165,9 +160,8 @@ void* httpPostBodyInternal(void *args) {
     mkxp_net::HTTPResponse res = req->post(reqbody, reqctype);
     ret = formResponse(res);
     
-    return (void*)ret;
+    return ret;
 }
-#endif
 
 RB_METHOD_GUARD(httpPostBody) {
     RB_UNUSED_PARAM;
