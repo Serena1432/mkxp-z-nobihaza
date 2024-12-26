@@ -22,7 +22,7 @@ This will be updated frequently whenever I find a new error when building.
 
 ### Ruby
 
-I will use Ruby from `rvm` instead of building from `mkxp-z/ruby` source code due to its difficulity and faulty nature. I don't know if the rvm version has any different with the fork version, but for now it's the only way due to my lack of knowledge.
+I will use Ruby from `rvm` instead of building from `mkxp-z/ruby` source code due to its difficulity and faulty nature. I don't know if the rvm version has any differences with the fork version, but for now it's the only way due to my lack of knowledge.
 
 * [Install rvm](https://rvm.io/) first.
 
@@ -46,7 +46,7 @@ If you encounter error while installing rubygems, just skip it. We won't need it
 
 *Not tested yet so no instructions are available*
 
-### macOS specific
+### macOS-specific
 
 * It's recommended to have both Xcode 12 and Xcode 10 installed. Xcode 10 will be used to build Ruby with the old toolchains, and Xcode 12 will be used to build the rest.
 
@@ -55,6 +55,8 @@ If you encounter error while installing rubygems, just skip it. We won't need it
 ### Linux-specific
 
 I only have Arch Linux installed, but if you find any equivalent ways for your distro please apply them.
+
+*Currently nothing is required apart from older `bison` requirements. I will update this when it has any in the future.*
 
 Only the `x86-64` architecture is tested.
 
