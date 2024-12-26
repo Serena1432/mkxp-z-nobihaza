@@ -20,6 +20,28 @@ This will be updated frequently whenever I find a new error when building.
 
 * `bison` 2.x (higher version will cause the `yydestruct` error when building)
 
+### Ruby
+
+I will use Ruby from `rvm` instead of building from `mkxp-z/ruby` source code due to its difficulity and faulty nature. I don't know if the rvm version any different with the fork version, but for now it's the only way due to my lack of knowledge.
+
+* [Install rvm](https://rvm.io/) first.
+
+* Install OpenSSL 1.x to your device. On my Arch Linux installation there's a way, but I don't know in other platforms yet:
+
+```sh
+yay -S openssl-1.0
+```
+
+Or you can just build it from source. It's much easier than building Ruby.
+
+* Install Ruby 1.9.3:
+
+```sh
+rvm install 1.9.3
+```
+
+If you encounter error while installing rubygems, just skip it. We won't need it anyways.
+
 ### Windows-specific
 
 *Not tested yet so no instructions are available*
@@ -34,9 +56,7 @@ This will be updated frequently whenever I find a new error when building.
 
 I only have Arch Linux installed, but if you find any equivalent ways for your distro please apply them.
 
-* Nothing special about the requirements for Linux aside from older `bison`. Just keep your current distro as-is and proceed building as usual.
-
-* I only tested the `x86-64` architecture. Other architectures aren't tested.
+Only the `x86-64` architecture is tested.
 
 ## Buildscripts
 

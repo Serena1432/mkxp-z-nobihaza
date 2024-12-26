@@ -2,8 +2,10 @@
 
 set -e
 echo "[*] Finalizing..."
+source ~/.rvm/scripts/rvm
+rvm use 1.9.3
 cd "$NBHZ_BUILDSCRIPTS_DIR/build"
-cp -r "$NBHZ_BUILDSCRIPTS_DIR/../../linux/build-x86_64/lib/ruby/1.9.1" .
+cp -r "$MY_RUBY_HOME/lib/ruby/1.9.1" .
 mv ./1.9.1 ./stdlib
 cp "$NBHZ_BUILDSCRIPTS_DIR/../../mkxp.json" .
 cp -r "$NBHZ_BUILDSCRIPTS_DIR/../../scripts" .

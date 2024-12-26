@@ -8,6 +8,7 @@ SDL2_IMAGE_FLAGS := ${SDL2_IMAGE_FLAGS}
 SDL2_TTF_FLAGS := ${SDL2_TTF_FLAGS}
 OPENAL_FLAGS := -DALSOFT_CPUEXT_NEON=no ${OPENAL_FLAGS}
 OPENSSL_FLAGS := $(ARCH_OPENSSL) ${OPENSSL_FLAGS}
+ZLIB_FLAGS := ${ZLIB_FLAGS}
 RUBY_FLAGS := ${RUBY_FLAGS}
 
 BUILD_PREFIX := ${PWD}/build-$(ARCH)
@@ -319,6 +320,21 @@ $(DOWNLOADS)/openssl/Makefile: $(DOWNLOADS)/openssl/Configure
 $(DOWNLOADS)/openssl/Configure:
 	$(CLONE) $(GITHUB)/openssl/openssl $(DOWNLOADS)/openssl --single-branch --branch OpenSSL_1_1_1 --depth 1
 
+# Zlib
+zlib: init_dirs $(LIBDIR)/libz.a
+$(LIBDIR)/libz.a: $(DOWNLOADS)/zlib/Makefile
+	cd $(DOWNLOADS)/zlib; \
+	make -j$(NPROC); make install
+
+$(DOWNLOADS)/zlib/Makefile: $(DOWNLOADS)/zlib/configure
+	cd $(DOWNLOADS)/zlib; \
+	CFLAGS="-fPIC $(CFLAGS)" ./configure $(ZLIB_FLAGS) \
+	--static \
+	--prefix="$(BUILD_PREFIX)"
+
+$(DOWNLOADS)/zlib/configure:
+	$(CLONE) $(GITHUB)/madler/zlib $(DOWNLOADS)/zlib --single-branch --branch master --depth 1
+
 # Standard ruby
 ruby: init_dirs openssl $(LIBDIR)/libruby.so.1.9
 
@@ -330,7 +346,7 @@ $(DOWNLOADS)/ruby/Makefile: $(DOWNLOADS)/ruby/configure
 	cd $(DOWNLOADS)/ruby; \
 	export $(CONFIGURE_ENV); \
 	export CFLAGS="$$CFLAGS"; \
-	export LDFLAGS="$$LDFLAGS"; \
+	export LDFLAGS="$$LDFLAGS -lz"; \
 	./configure $(CONFIGURE_ARGS) $(RUBY_CONFIGURE_ARGS) $(RUBY_FLAGS)
 
 $(DOWNLOADS)/ruby/configure: $(DOWNLOADS)/ruby/configure.ac
@@ -348,5 +364,5 @@ powerwash: clean-downloads
 clean-downloads:
 	-rm -rf downloads
 
-deps-core: libtheora libvorbis pixman libpng physfs sdl2 sdl2image sdlsound sdl2ttf openal openssl fluidsynth uchardet iconv
-everything: deps-core ruby
+deps-core: libtheora libvorbis pixman libpng physfs sdl2 sdl2image sdlsound sdl2ttf openal fluidsynth uchardet iconv
+everything: deps-core
