@@ -22,7 +22,7 @@ This will be updated frequently whenever I find a new error when building.
 
 ### Ruby
 
-I will use Ruby from `rvm` instead of building from `mkxp-z/ruby` source code due to its difficulity and faulty nature. I don't know if the rvm version any different with the fork version, but for now it's the only way due to my lack of knowledge.
+I will use Ruby from `rvm` instead of building from `mkxp-z/ruby` source code due to its difficulity and faulty nature. I don't know if the rvm version has any different with the fork version, but for now it's the only way due to my lack of knowledge.
 
 * [Install rvm](https://rvm.io/) first.
 
@@ -37,7 +37,7 @@ Or you can just build it from source. It's much easier than building Ruby.
 * Install Ruby 1.9.3:
 
 ```sh
-rvm install 1.9.3
+rvm install 1.9.3 --enable-shared --disable-install-doc --with-out-ext=openssl,readline,dbm,gdbm --with-static --disable-rubygems
 ```
 
 If you encounter error while installing rubygems, just skip it. We won't need it anyways.
